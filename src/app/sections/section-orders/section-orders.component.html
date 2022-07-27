@@ -1,0 +1,157 @@
+
+<div class="section-container">
+    <h2 style="text-align: center;">
+        List Orders
+    </h2>
+    <table class="table table-inverse table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Customer</th>
+          <th>Amount</th>
+          <th>Order Placed</th>
+          <th>Order Fulfilled</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.id }}</td>
+          <td>{{ order.customer.name }}</td>
+          <td>{{ order.total }}</td>
+          <td>{{ order.placed | date: 'short' }}</td>
+          <td>{{ order.completed | date: 'short' }}</td>
+          <td>Status</td>
+        </tr>
+        <tr *ngIf="!orders || orders.length === 0">
+          <td colspan="6" style="text-align: center; color: maroon;">
+            <span style="font-family: bold; font-size: 30px;">No data to display</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <app-pagination
+    (goPage)="goToPage($event)"
+    (goPrev)="goToPrevious()"
+    (goNext)="goToNext()"
+    [page]="page"
+    [perPage]="limit"
+    [count]="total"></app-pagination>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Angular material-->
+<!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="customer">
+            <th mat-header-cell *matHeaderCellDef> Customer </th>
+            <td mat-cell *matCellDef="let element"> {{element.customer}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="amount">
+            <th mat-header-cell *matHeaderCellDef> Amount </th>
+            <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="orderPlaced">
+            <th mat-header-cell *matHeaderCellDef> Order Placed </th>
+            <td mat-cell *matCellDef="let element"> {{element.orderPlaced}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="orderFulfilled">
+            <th mat-header-cell *matHeaderCellDef> Order Fulfilled </th>
+            <td mat-cell *matCellDef="let element"> {{element.orderFulfilled}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->
+
+
+
+    <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20, 50]" showFirstLastButtons></mat-paginator> -->
+        <!-- <ng-container matColumnDef="customerName">
+            <th mat-header-cell *matColumnDef>Customers</th>
+            <td mat-cell *matColumnDef="let element"> {{element.customerName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="amount">
+            <th mat-header-cell *matColumnDef>Amount</th>
+            <td mat-cell *matColumnDef="let element"> {{element.amount}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="orderPlaced">
+            <th mat-header-cell *matColumnDef>Order Placed/th>
+            <td mat-cell *matColumnDef="let element"> {{element.orderPlaced}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="orderFulfilled">
+            <th mat-header-cell *matColumnDef>Order Fulfilled</th>
+            <td mat-cell *matColumnDef="let element"> {{element.orderFulfilled}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matColumnDef>Status</th>
+            <td mat-cell *matColumnDef="let element"> {{element.status}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->
+
+
+
+    <!-- <app-pagination 
+    (goPage)="goToPage($event)" 
+    (goPrev)="goToPrevious()" 
+    (goNext)="goToNext()"
+    [page]="page"
+    [perPage]="limit"
+    [count]="total"></app-pagination> -->

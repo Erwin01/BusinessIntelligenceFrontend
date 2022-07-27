@@ -1,0 +1,27 @@
+
+<div class="pages">
+    <div class="pagination" *ngIf="count > 0">
+            <div class="page-counts"> {{ getMin() }} throug {{ getMax() }} of {{ count }} orders</div>
+            &nbsp;
+            <div class="page-totals"> {{ totalPages() }} Total Pages</div>
+            &nbsp; &nbsp;
+        <button class="btn btn-small btn-info" 
+            (click)="onPrev()" 
+            [disabled]="page === 1 || loading" [ngClass]="{'disabled': page === 1 || loading }">
+            < Previous Page 
+        </button>
+        &nbsp;
+        <button class="btn btn-small btn-info btn-pageNumber"
+            *ngFor="let pageNum of getPages()"
+            (click)="onPage(pageNum)"
+            [ngClass]="{'active': pageNum === page, 'disabled': loading}">
+            {{ pageNum }}
+        </button>
+        &nbsp;
+        <button class="btn btn-small btn-info" 
+            (click)="onNext()" 
+            [disabled]="isLastPage() || loading" [ngClass]="{'disabled': isLastPage() || loading }">
+            Next Page 
+        </button>
+    </div>   
+</div>

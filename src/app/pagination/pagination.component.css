@@ -1,0 +1,14 @@
+.pagination{
+    padding: 10px;
+}
+
+.pages{
+    padding: 4px;
+    display: block;
+}
+
+.btn-pageNumber{
+    min-width: 55px;
+    margin: 2px;
+}
+

@@ -1,0 +1,9 @@
+
+<div class="section-container">
+    <h2>Servers</h2>
+    <div class="card-deck servers">
+        <div *ngFor="let server of servers">
+            <app-server [serverInput]="server" (serverAction)="sendMessage($event)"></app-server>
+        </div>
+    </div>
+</div>
